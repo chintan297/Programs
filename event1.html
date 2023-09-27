@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event 1</title>
+    <style>
+        .buttons{
+            margin: 20px;
+        }
+        button{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body onload="this.alert('page is loaded')">
+    <h1>This is a onClick event of date</h1>
+    <div class="buttons">
+    
+    <button onclick=handleClick()>onClick</button>
+    <div id="demo"></div>
+    <br>
+    <!-- this event -->
+    <button onmouseover="this.innerHTML=Date()">onmouseOver</button>
+    <br>
+    <button onmouseout="this.innerHTML=Date()">onMouseOut</button>
+    <br>
+    <input type="text" onkeydown=handleOnKeyDown()>
+    <br>
+    <div id="demo1"></div>
+    <br>
+    <select id="sele" onchange=handleChangeIt()>
+        <option value="Volvo">Volvo</option>
+        <option value="BMW">BMW</option>
+        <option value="Hundai">Hundai</option>
+        <option value="Audi">Audi</option>
+        <option value="Honda">Honda</option>
+    </select>
+    
+<div id="demo2">Selected Value </div>
+
+</div>
+    <script>
+     handleClick=()=>{
+            document.getElementById('demo').innerHTML = Date();
+        }
+        handleOnKeyDown = () =>{
+            document.getElementById('demo1').innerHTML = "Pura likh do kuch nahi hua"
+        }
+        function handleChangeIt(){
+            var x = document.getElementById('sele').value;
+            document.getElementById('demo2').innerHTML = "Selected Value :"+ x;
+
+        }
+    </script>
+</body>
+</html>

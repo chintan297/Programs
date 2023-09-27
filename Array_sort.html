@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sorting</title>
+</head>
+<body>
+    <h1>Array Sorting</h1>
+    <h2>1. Sort - Alphabetically</h2>
+    <p>Without Sort - fruits = ["Banana", "Apple", "Mango", "Kiwi", "Orange"]</p>
+    <p id="sortFruits">With Sort - </p>
+    <button onclick=handleSortFruits()>Click to Sort</button>
+
+    <h2>2. Reverse - Alphabetically</h2>
+    <p>Without Sort - fruits = ["Banana", "Apple", "Mango", "Kiwi", "Orange"]</p>
+    <p id="reverseFruits">With Reverse - </p>
+    <button onclick=handleReverseFruits()>Click to Reverse</button>
+
+    <h2>3. Sort - Numerically</h2>
+    <p>Without Sort - n = [85, 56, 2, 1, 100, 20]</p>
+    <p id="sortNumber">With Sort - </p>
+    <p id="reverseSortNumber">With Reverse Sort - </p>
+    <button onclick=handleSortNumber()>Click to Sort</button>
+    <button onclick=handleDescendingNumber()>Click to Reverse Sort</button>
+
+    <h2>4. Min and Max Number on an Array </h2>
+    <p>Without Sort - n = [85, 56, 2, 1, 100, 20]</p>
+    <p id="minNumber">Min Number - </p>
+    <p id="maxNumber">Max Number - </p>
+    <button onclick=handleMinNumber()>Get Min Number</button>
+    <button onclick=handleMaxNumber()>Get Max Number</button>
+
+
+    <script>
+        let fruits = ["Banana", "Apple", "Mango", "Kiwi", "Orange"];
+        handleSortFruits=()=>{
+            let sortFruits = fruits.sort();
+            document.getElementById('sortFruits').innerHTML = "With Sort - " + sortFruits
+        }
+        handleReverseFruits=()=>{
+            let sortFruits = fruits.sort();
+            let reverseFruits = sortFruits.reverse();
+            document.getElementById('reverseFruits').innerHTML = "With Reverse - " + reverseFruits;
+        }
+        handleSortNumber=()=>{
+            let n = [85, 56, 2, 1, 100, 20];
+            let sortNum = n.sort(function(a, b){
+                return a-b
+            })
+            document.getElementById('sortNumber').innerHTML = "With Sort - " + sortNum;
+        }
+        handleDescendingNumber=()=>{
+            let n = [85, 56, 2, 1, 100, 20];
+            let revNumber = n.sort(function(a, b){
+                return b-a
+            })
+            document.getElementById('reverseSortNumber').innerHTML = "With Reverse Sort - " + revNumber;
+        }
+        handleMinNumber=()=>{
+            let n = [85, 56, 2, 1, 100, 20];
+            let minNumber = function(n){
+                return Math.min.apply(null,n)
+            }
+            document.getElementById('minNumber').innerHTML = "Min Number - " + minNumber(n);
+        }
+        handleMaxNumber=()=>{
+            let n = [85, 56, 2, 1, 100, 20];
+            let maxNumber = function(n){
+                return Math.max.apply(null,n)
+            }
+            document.getElementById('maxNumber').innerHTML = "Max Number - " + maxNumber(n);
+        }
+    </script>
+</body>
+</html>

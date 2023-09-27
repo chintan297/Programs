@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+<body>
+    <h1>Calculate two value</h1>
+
+    <script>
+
+        // task 1
+
+        class Calc{
+            constructor(){
+                // this.x = +prompt("Enter value of x : ")
+                // this.y = +prompt("Enter value of y :")
+                let x = prompt("Enter value of x : ")        
+                let y = prompt("Enter value of y :")
+                this.x = parseInt(x)
+                this.y = parseInt(y)
+            }
+            displays(){
+                console.log("X is :",this.x)
+                console.log("Y is :",this.y)
+            }
+            sum(){
+                return this.x + this.y
+            }
+            mul(){
+                return this.x * this.y
+            }
+        }
+        let a = new Calc()
+        a.displays()
+        console.log("Sum is : ",a.sum())
+        console.log("Mul is : ",a.mul())
+
+// --------------------------------------------------------------------------
+
+        // 2 task
+
+        class Accum{
+            constructor(r){
+                this.value = r
+                this.value += +prompt("How much add you ? ")
+                this.value += +prompt("How much add you ? ")
+            }
+            sum(){
+                return this.value 
+            }
+        }
+        let b = new Accum(1)
+        console.log("Sum is : ",b.sum())
+        
+    </script>
+</body>
+</html>

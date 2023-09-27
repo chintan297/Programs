@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise</title>
+  </head>
+  <body>
+    <h1>Promise</h1>
+    <h4 id="demo"></h4>
+    <button onclick="this.style.display = 'none';"></button>
+    <script>
+      // const a = new Promise(function (myResolve, myReject) {
+      //   let x = prompt("Enter a Value ", 0);
+      //   if (x < 10) {
+      //     myResolve("OK");
+      //   } else {
+      //     myReject("ERROR");
+      //   }
+      // });
+      // a.then(function (value) {
+      //   console.log("This is extra then 1 ");
+      // })
+      //   .then(function () {
+      //     console.log("This is extra then 2");
+      //   })
+      //   .catch(function () {
+      //     console.log("This is catch error");
+      //   })
+      //   .finally(function () {
+      //     console.log(
+      //       "This is finally it is ececute after the resolved or rejected promise"
+      //     );
+      //   });
+
+      // // setTimeout(function(){
+      // //     myFynction("This is a Function")
+      // // },3000)
+      // //     function myFynction(value){
+      // //         alert(value)
+      // //     }
+
+      // let newArr = Array.toString(["hello", "Fine"]);
+      // document.getElementById("demo").innerHTML = newArr;
+      // console.log(newArr)
+
+      //       let promise = new Promise(function(resolved,rejected){
+      //         setTimeout(()=>{
+
+      //           rejected(new Error("Failed"))
+
+      //         },1000)
+      //       })
+      //       promise.then(
+      //         function resolved(result){
+      //           console.log(result)
+      //         }
+      //       )
+      //     .catch(
+      //       function rejected(result){
+      //         console.log("Error hi Error",result)
+      //       }
+      //     )
+
+      //     function delay(ms) {
+      //       return new Promise((resolved,rejected)=>{
+      //         setTimeout((ms)=>{
+      //           resolved()
+      //         },ms)
+
+      //     })
+      // }
+
+      // delay(3000).then(() => alert('runs after 3 seconds'));
+
+      // let setT = setTimeout(function(){
+      //   console.log("Hello")
+      // },3877)
+      // console.log(setT)
+
+
+      //returning promises
+
+      // new Promise((resolve, rejected) => {
+      //   setTimeout(() => {
+      //     resolve(1);
+      //   }, 1000);
+      // })
+      //   .then(function (res) {
+      //     alert(res);
+      //     return new Promise((resolve, rejected) => {
+      //       setTimeout(() => {
+      //         resolve(res * 2);
+      //       }, 1000);
+      //     });
+      //   })
+      //   .then(function (res) {
+      //     alert(res);
+      //     return new Promise((resolve, rejected) => {
+      //       setTimeout(() => {
+      //         resolve(res * 2);
+      //       }, 1000);
+      //     });
+      //   }).then(function(res){
+      //       alert(res)  
+      //       blabla()
+      //   }).catch(function(bla){
+      //     console.log(bla)
+      //   })
+
+
+      new Promise(function(resolve,rejected){
+        throw new Error('Error')
+      }).then(function(){
+        console.log("Without resolve then")
+      }).catch(function(err){
+        console.log("Second Error")
+      })
+
+//       new Promise(function(resolve, reject) {
+//   setTimeout(() => {
+//     throw new Error("Whoops!");
+//   }, 1000);
+// }).catch(alert);
+
+
+// Promise.all([
+//   new Promise(function(resolve,reject){
+//     setTimeout(function(){
+//       resolve(1)
+//     },3000)
+//   }),
+//     new Promise(function(resolve,reject){
+//     setTimeout(function(){
+//       resolve(2)
+//     },1000)
+//   }),
+//   new Promise(function(resolve,reject){
+//     setTimeout(function(){
+//       resolve(3)
+//     },2000)
+//   })
+// ]).then(function(res){
+//   alert(res)
+// })
+
+    </script>
+  </body>
+</html>

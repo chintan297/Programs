@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function abc(){
+            // setInterval(()=>{
+            //     console.log("Hello console")
+            // },2000)
+            console.log("Hello 1")
+            let i = 1
+
+            let setT = 
+            console.log("setT ="+setTimeout(()=>{
+                alert(`${i} setTimeout`)
+            },1500))
+            console.log("setT ="+setTimeout(()=>{
+                alert(`${i} setTimeout`)
+            },2500))
+       
+            console.log("setT ="+setTimeout(()=>{
+                alert(`${i} setTimeout`)
+            },4500))
+            console.log("Hello 2")
+        }
+        abc()
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <style>
+        .row{
+            display: flex;
+            flex: 100%
+        }
+        .c1{
+            flex: 50%;
+        }
+        .c2{
+            flex: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row">
+    <div class="c1"> 
+        <h1>String Methods </h1>
+            <h2>Its all changes in a new string,
+                old string is as well as
+            </h2>
+
+            <div class="container">
+                <h3>1. replace()</h3>
+                <p id="replace">"This is a Mac System and Mac is hard"</p>
+                <button onclick=handleReplace()>Click to Replace</button> 
+
+                <h3>2. replaceAll()</h3>
+                <p id="replaceAll">"Dog, Cat, Cat, Dog, Dog"</p>
+                <button onclick=handleReplaceAll()>Click to Replace all</button>
+                
+                <h3>3. toLowerCase()</h3>
+                <p id="NormalToLower">"String to LowerCase - variableName.toLowerCase()"</p>
+                <p id="toLowerCase" style="visibility: hidden;">hello</p>
+                <button onclick=handleToLowerCase()>Click to lowerCase</button>
+            
+                <h3>4. toUpperCase()</h3>
+                <p id="NormalToUpper">"String to UpperCase - variableName.toUpperCase()"</p>
+                <p id="toUpperCase" style="visibility: hidden;">hello</p>
+                <button onclick=handleToUpperCase()>Click to UpperCase</button>
+            
+                <h3>5. concat()</h3>
+                <p>
+                <span>String 1 -</span> <span id="string1">Joins two</span>
+                </p>
+                <span>String 2 -</span><span id="string2">more string</span>
+                <p style="visibility: hidden;" id="concatString">hello</p>
+                <button onclick=handleConcatString()>Click and Concat String</button>
+
+                <h3>6. trim()</h3>
+                <p id="trimm">    Hello    </p>
+                <span>Length - </span><span id="length" ></span>
+                <p id="newlength" >New length - <p>
+                <button onclick=handletrim()>Click and trim</button>
+            </div>
+        </h1>
+    </div>
+    <div class="c2">
+       
+   </div>
+</div>
+    <script>
+        let a = "Apple, Banana, Kiwi, Mango, Banana"
+        console.log(a)
+        console.log("Slice is - "+a.slice(5,-7))          // slice(start, end)
+        console.log("SubString is - "+ a.substring(7,13)) // substring(start, end)
+        console.log("Substr is - "+a.substr(7,6))         // substr(start, length)
+        console.log("Replace content - "+a.replace("Mango","Keri") )  //replace(search value, new value)
+        console.log(a)
+        console.log(typeof(a.split(",")))
+
+
+     
+        handleReplace=()=>{
+            let b = document.getElementById('replace').innerHTML;
+            document.getElementById('replace').innerHTML =  b.replace(/Mac/g,"Windows")
+         }
+        handleReplaceAll=()=>{
+            let c = document.getElementById('replaceAll').innerHTML;
+            document.getElementById('replaceAll').innerHTML =  c.replaceAll("Dog","Mouse")
+        }
+        handleToLowerCase=()=>{
+            let d = document.getElementById('NormalToLower').innerHTML;
+            document.getElementById('toLowerCase').innerHTML = d.toLowerCase()
+            document.getElementById('toLowerCase').style.visibility = "visible"
+        }
+        handleToUpperCase=()=>{
+            let e = document.getElementById('NormalToUpper').innerHTML;
+            document.getElementById('toUpperCase').innerHTML = e.toUpperCase()
+            document.getElementById('toUpperCase').style.visibility = "visible"
+        }
+       handleConcatString=()=>{
+            let f = document.getElementById('string1').innerHTML;
+            let g = document.getElementById('string2').innerHTML;
+            document.getElementById('concatString').innerHTML = f.concat(" or ",g)
+            document.getElementById('concatString').style.visibility = "visible"
+       }
+        let h = document.getElementById('trimm').innerHTML;
+        document.getElementById('length').innerHTML = h.length;
+        
+        handletrim=()=>{
+            let i = h.trim()
+            document.getElementById('newlength').innerHTML = "New length - " + i.length;
+        }
+     
+    </script>
+</body>
+</html>

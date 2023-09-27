@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch_API</title>
+    <style>
+      #images img {
+        height: 200px;
+        width: 200px;
+      }
+      p {
+        width: 200px;
+      }
+      #images {
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+        gap: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Movies</h1>
+    <button onclick="btnCldick()">Fetch</button>
+    <div id="images"></div>
+
+    <script>
+     
+      let images = document.getElementById("images");
+      async function btnClick() {
+        let pageNumber = 1
+      let pagePerNumber = 3
+        let response = await fetch(`https://fakestoreapi.com/products?_page=1&_limit=5`);
+        let data = await response.json();
+        console.log(data);
+        data.map(function (data, i) {
+          return (images.innerHTML += `
+                  <div>
+            <img src="${data.image}" class="img" id="img${i}" alt="" />
+            <p>Name : ${data.title}</p>
+            <p>Category : ${data.category}</p>
+              <p>Price : ${data.price}</p>
+                <p>Description : ${data.body}</p>
+                  
+              </div>
+      `);
+        });
+      }
+      btnClick()
+    </script>
+  </body>
+</html>

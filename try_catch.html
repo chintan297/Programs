@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exception Handling</title>
+</head>
+<body>
+    <h1>Exception handling</h1>
+    <script>
+       try{
+        let a = 155
+         if(a<100){
+             console.log("A is less than 100")
+         }
+         else{
+             throw("A is not less than 100")
+        }
+         }
+        // (a<100) ? console.log("A is less than 100") :throw ("A is not less than 100")
+       
+       catch(e)
+       {
+        console.error(e)
+       }
+    </script>
+</body>
+</html>
